@@ -23,7 +23,6 @@ describe 'DotaSteam::SteamEntities::SteamUser' do
       expect(user).not_to be nil
 
       user_attributes.each do |att|
-        pp att
         expect(user.send(att)).not_to be nil
       end
     end

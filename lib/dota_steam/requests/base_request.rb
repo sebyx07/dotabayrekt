@@ -1,5 +1,6 @@
+require 'http'
 module DotaSteam
-  module Requst
+  module Requests
     class BaseRequest
       attr_reader :status, :body
 

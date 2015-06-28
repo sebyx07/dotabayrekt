@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'dota_steam/steam_entities/dota_match'
-require 'dota_steam/steam_entities/dota_player'
 require 'json'
 
 describe 'DotaSteam::SteamEntities::DotaMatch' do

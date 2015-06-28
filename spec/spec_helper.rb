@@ -1,5 +1,6 @@
 require 'pry'
 require 'dota_steam'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # Use color in STDOUT

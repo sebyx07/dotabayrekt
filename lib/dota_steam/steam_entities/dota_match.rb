@@ -1,3 +1,5 @@
+require 'dota_steam/steam_entities/dota_player'
+
 module DotaSteam
   module SteamEntities
     class DotaMatch
