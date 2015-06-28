@@ -17,7 +17,7 @@ module DotaSteam
       private
       def index
         mutex.synchronize do
-          if !@index  || @index > KEYS.size
+          if !@index  || @index + 2 > KEYS.size
             @index = 0
           else
             @index += 1
