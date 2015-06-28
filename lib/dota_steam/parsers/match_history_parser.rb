@@ -47,8 +47,8 @@ module DotaSteam
           @status = :done
         end
 
-
-        matches
+        @result = matches
+        true
       end
     end
   end

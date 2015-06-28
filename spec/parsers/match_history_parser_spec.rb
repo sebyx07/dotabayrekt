@@ -16,8 +16,8 @@ describe 'DotaSteam::Parsers::MatchHistoryParser' do
           with(headers: { connection: 'close', host: 'api.steampowered.com', user_agent: 'http.rb/0.8.12'}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistoryLast.json'), :headers => {})
 
-      matches = parser.parse_full_history
-      expect(matches.size).to eq 2
+      parser.parse_full_history
+      expect(parser.result.size).to eq 2
       expect(parser.status).to eq :done
     end
   end

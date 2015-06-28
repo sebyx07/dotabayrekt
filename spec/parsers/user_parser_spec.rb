@@ -11,8 +11,8 @@ describe 'DotaSteam::Parsers::UserParser' do
           with(headers: { connection: 'close', host: 'api.steampowered.com', user_agent: 'http.rb/0.8.12'}).
           to_return(:status => 200, :body => File.read('./json_responses/getPlayerSummaries.json'), :headers => {})
 
-      users = parser.parse
-      expect(users.size).to eq 1
+      parser.parse
+      expect(parser.result.size).to eq 1
       expect(parser.status).to eq :done
     end
   end

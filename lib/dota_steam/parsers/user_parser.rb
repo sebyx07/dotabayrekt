@@ -31,7 +31,8 @@ module DotaSteam
           @status = :fail
         end
 
-        users
+        @result = users
+        true
       end
     end
   end
