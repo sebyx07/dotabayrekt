@@ -34,20 +34,18 @@ module DotaSteam
 
             if next_request.status == 200
               result = MultiJson.load(next_request.body)['result']
-              time = Benchmark.measure do
-                temp = result['matches']
-                temp.shift
 
-                new_matches = temp.map {|match_hash| DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)}
-                matches += new_matches
-                if new_matches.last
-                  last_match_id = new_matches.last.match_id
-                else
-                  last_match_id = nil
-                end
-                results_remaining = result['results_remaining']
+              temp = result['matches']
+              temp.shift
+
+              new_matches = temp.map {|match_hash| DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)}
+              matches += new_matches
+              if new_matches.last
+                last_match_id = new_matches.last.match_id
+              else
+                last_match_id = nil
               end
-              puts time
+              results_remaining = result['results_remaining']
             else
               @status = :fail
               last_match_id = nil
