@@ -6,6 +6,11 @@ module DotaSteam
       attr_accessor :match_id, :match_seq_num, :start_time, :lobby_type, :radiant_team_id, :dire_team_id, :players
 
 
+      def to_s
+        "match_id: #{match_id} match_seq_num: #{match_seq_num} start_time: #{start_time} lobby_type: #{lobby_type} " +
+        "radiant_team_id: #{radiant_team_id} dire_team_id: #{dire_team_id}"
+      end
+
       #Static
       class << self
         def new_from_history(hash)

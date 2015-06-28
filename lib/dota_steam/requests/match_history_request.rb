@@ -14,6 +14,7 @@ module DotaSteam
         req = HTTP.get(URL, params: {key: DotaSteam::ApiKeyProvider.get_key}.merge(@params))
         @status = req.status.to_i
         @body = req.body
+
         true
       end
     end
