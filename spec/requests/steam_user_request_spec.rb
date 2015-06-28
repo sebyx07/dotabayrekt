@@ -13,7 +13,7 @@ describe 'DotaSteam::Requests::SteamUserRequest' do
 
       req.run
 
-      expect(req.status.to_i).to equal 200
+      expect(req.status).to equal 200
     end
   end
 end

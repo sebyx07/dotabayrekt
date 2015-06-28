@@ -26,9 +26,11 @@ module DotaSteam
 
 
           users = players.map{|player_hash| DotaSteam::SteamEntities::SteamUser.new_from_hash(player_hash) }
+          @status = :done
+        else
+          @status = :fail
         end
 
-        @status = :done
         users
       end
     end

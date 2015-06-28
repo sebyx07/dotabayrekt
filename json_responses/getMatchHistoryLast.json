@@ -1,0 +1,31 @@
+{
+  "result": {
+    "status": 1,
+    "num_results": 100,
+    "total_results": 500,
+    "results_remaining": 0,
+    "matches": [
+      {
+        "match_id": 1589628135,
+        "match_seq_num": 1421037389,
+        "start_time": 1435476025,
+        "lobby_type": 8,
+        "radiant_team_id": 0,
+        "dire_team_id": 0,
+        "players": [
+          {
+            "account_id": 4294967295,
+            "player_slot": 0,
+            "hero_id": 4
+          },
+          {
+            "account_id": 205389318,
+            "player_slot": 128,
+            "hero_id": 11
+          }
+        ]
+
+      }
+    ]
+  }
+}

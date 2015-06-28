@@ -12,7 +12,7 @@ module DotaSteam
 
       def run
         req = HTTP.get(URL, params: {key: DotaSteam::ApiKeyProvider.get_key}.merge(@params))
-        @status = req.status
+        @status = req.status.to_i
         @body = req.body
         true
       end
