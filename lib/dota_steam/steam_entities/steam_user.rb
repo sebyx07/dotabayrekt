@@ -39,6 +39,7 @@ module DotaSteam
 
           user.steam_id = hash['steamid'].to_i
           user.community_visibility_state = hash['communityvisibilitystate']
+          user.profile_state = hash['profilestate']
           user.persona_name = hash['personaname']
           user.last_log_off = hash['lastlogoff']
           user.profile_url = hash['profileurl']

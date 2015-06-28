@@ -10,10 +10,19 @@ describe 'DotaSteam::SteamEntities::DotaMatch' do
     json['result']['matches'][0]
   end
 
+  let(:match_attributes) do
+    [:match_id, :match_seq_num, :start_time, :lobby_type, :radiant_team_id, :dire_team_id]
+  end
+
   describe '#self.new_from_history' do
     it 'creates a match' do
       match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
       expect(match).not_to be nil
+
+      match_attributes.each do |at|
+        expect(match.send(at)).not_to be nil
+      end
+      expect(match.players.size).to be > 0
     end
   end
 end
