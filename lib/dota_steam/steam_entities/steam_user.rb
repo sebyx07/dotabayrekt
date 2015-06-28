@@ -1,6 +1,6 @@
 module DotaSteam
   module SteamEntities
-    class User
+    class SteamUser
       attr_accessor :steam_id, :community_visibility_state, :profile_state, :persona_name, :last_log_off, :profile_url,
                   :avatar, :persona_state, :real_name, :primary_clan_id, :time_created, :persona_state_flags,
                   :loc_country_code, :loc_state_code, :loc_city_id
