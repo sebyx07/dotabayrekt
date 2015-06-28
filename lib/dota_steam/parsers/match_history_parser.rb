@@ -40,7 +40,11 @@ module DotaSteam
 
                 new_matches = temp.map {|match_hash| DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)}
                 matches += new_matches
-                last_match_id = new_matches.last.match_id
+                if new_matches.last
+                  last_match_id = new_matches.last.match_id
+                else
+                  last_match_id = nil
+                end
                 results_remaining = result['results_remaining']
               end
               puts time
