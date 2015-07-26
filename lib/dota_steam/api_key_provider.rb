@@ -1,6 +1,5 @@
 module DotaSteam
   class ApiKeyProvider
-    KEYS = ['EE4B46697AAE3B64E5E4334E10E7AB0F']
 
     class << self
       def mutex
@@ -10,14 +9,13 @@ module DotaSteam
       undef_method :new
 
       def get_key
-        KEYS[index]
+        DotaSteam.configuration.api_keys[index]
       end
-
 
       private
       def index
         mutex.synchronize do
-          if !@index  || @index + 2 > KEYS.size
+          if !@index  || @index + 2 > DotaSteam.configuration.api_keys.size
             @index = 0
           else
             @index += 1
