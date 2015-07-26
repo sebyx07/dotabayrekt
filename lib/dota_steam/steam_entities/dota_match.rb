@@ -23,11 +23,13 @@ module DotaSteam
           match.radiant_team_id = hash['radiant_team_id']
           match.dire_team_id = hash['dire_team_id']
 
+          match
+        end
+
+        def add_players(match, hash)
           match.players = hash['players'].map do |player_hash|
             DotaSteam::SteamEntities::DotaPlayer.new_from_history(player_hash)
           end
-
-          match
         end
       end
     end

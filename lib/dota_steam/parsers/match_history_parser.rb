@@ -25,7 +25,11 @@ module DotaSteam
 
             result = MultiJson.load(initial_request.body)['result']
 
-            matches += result['matches'].map {|match_hash| DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)}
+            matches += result['matches'].map do |match_hash|
+              match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
+              DotaSteam::SteamEntities::DotaMatch.add_players(match, match_hash)
+              match
+            end
             results_remaining = result['results_remaining']
 
             last_match_id = matches.last.match_id
@@ -40,7 +44,11 @@ module DotaSteam
                 temp = result['matches']
                 temp.shift
 
-                new_matches = temp.map {|match_hash| DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)}
+                new_matches = temp.map do |match_hash|
+                  match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
+                  DotaSteam::SteamEntities::DotaMatch.add_players(match, match_hash)
+                  match
+                end
                 matches += new_matches
                 if new_matches.last
                   last_match_id = new_matches.last.match_id

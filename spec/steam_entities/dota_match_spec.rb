@@ -13,9 +13,10 @@ describe 'DotaSteam::SteamEntities::DotaMatch' do
     [:match_id, :match_seq_num, :start_time, :lobby_type, :radiant_team_id, :dire_team_id]
   end
 
-  describe '#self.new_from_history' do
+  describe '#self.new_from_history && #self.add_players' do
     it 'creates a match' do
       match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
+      DotaSteam::SteamEntities::DotaMatch.add_players(match, match_hash)
       expect(match).not_to be nil
 
       match_attributes.each do |at|
