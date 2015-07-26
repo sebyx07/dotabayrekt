@@ -8,7 +8,7 @@ describe 'DotaSteam::Requests::MatchHistoryRequest' do
   describe '#run' do
     it 'makes http request to steam' do
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=EE4B46697AAE3B64E5E4334E10E7AB0F').
-          with(headers: { connection: 'close', host: 'api.steampowered.com', user_agent: 'http.rb/0.8.12'}).
+          with(headers: { connection: 'close', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistory.json'), :headers => {})
 
       req.run
