@@ -5,7 +5,7 @@ require 'dota_steam/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'dota_steam'
-  spec.version       = DotaSteam::VERSION
+  spec.version       = '0.0.2'
   spec.authors       = ['sebyx07']
   spec.email         = ['gore.sebyx@yahoo.com']
 
