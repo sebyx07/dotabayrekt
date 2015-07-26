@@ -40,7 +40,7 @@ describe 'DotaSteam::SteamEntities::DotaMatch' do
     end
   end
 
-  describe '#self.new_from_history && #self.add_players_history' do
+  describe '#self.new_from_full && #self.add_players_full' do
     it 'creates a match' do
       match = DotaSteam::SteamEntities::DotaMatch.new_from_full(match_hash_full)
       DotaSteam::SteamEntities::DotaMatch.add_players_full(match, match_hash_full)
