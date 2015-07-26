@@ -5,12 +5,12 @@ require 'dota_steam/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'dota_steam'
-  spec.version       = '0.0.2'
+  spec.version       = DotaSteam::VERSION
   spec.authors       = ['sebyx07']
   spec.email         = ['gore.sebyx@yahoo.com']
 
-  spec.summary       = %q{allah }
-  spec.description   = %q{allah }
+  spec.summary       = %q{ omg lol }
+  spec.description   = %q{ omg lol }
   spec.homepage      = 'http://guides.rubygems.org/'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
