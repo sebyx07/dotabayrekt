@@ -53,4 +53,32 @@ describe 'DotaSteam::SteamEntities::DotaMatch' do
       expect(match.players.size).to be > 0
     end
   end
+
+  describe '#radiant' do
+    it 'returns two radiant players' do
+      player_1 = double
+      player_2 = double
+      player_1.stub(:radiant?) { true }
+      player_2.stub(:radiant?) { true }
+
+      match = DotaSteam::SteamEntities::DotaMatch.new
+      match.players = [player_1, player_2]
+
+      expect(match.radiant.size).to eq 2
+    end
+  end
+
+  describe '#dire' do
+    it 'returns two dire players' do
+      player_1 = double
+      player_2 = double
+      player_1.stub(:radiant?) { false }
+      player_2.stub(:radiant?) { false }
+
+      match = DotaSteam::SteamEntities::DotaMatch.new
+      match.players = [player_1, player_2]
+
+      expect(match.dire.size).to eq 2
+    end
+  end
 end

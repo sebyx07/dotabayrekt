@@ -47,4 +47,18 @@ describe 'DotaSteam::SteamEntities::DotaPlayer' do
       end
     end
   end
+
+  describe '#radiant?' do
+    it 'returns true if players is radiant' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.player_slot = 0
+      expect(player.radiant?).to be true
+    end
+
+    it 'returns false if players is dire' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.player_slot = 128
+      expect(player.radiant?).to be false
+    end
+  end
 end

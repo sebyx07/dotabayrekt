@@ -59,6 +59,11 @@ module DotaSteam
           end
         end
       end
+
+
+      def radiant?
+        player_slot < 128
+      end
     end
   end
 end

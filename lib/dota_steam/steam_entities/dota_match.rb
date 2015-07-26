@@ -59,6 +59,14 @@ module DotaSteam
           end
         end
       end
+
+      def radiant
+        players.map { |player|  player.radiant? }
+      end
+
+      def dire
+        players.map { |player|  player.radiant? }
+      end
     end
   end
 end
