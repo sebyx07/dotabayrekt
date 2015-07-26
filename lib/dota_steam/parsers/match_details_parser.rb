@@ -21,7 +21,8 @@ module DotaSteam
             request.run(http)
             if request.status == 200
               result = MultiJson.load(request.body)['result']
-              if result.nil?
+              if result.nil? || result['error']
+                @parse_errors.push match_id
                 @status = :fail
               else
                 match = DotaSteam::SteamEntities::DotaMatch.new_from_full(result)

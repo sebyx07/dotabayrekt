@@ -23,7 +23,8 @@ module DotaSteam
 
           if initial_request.status == 200
             result = MultiJson.load(initial_request.body)['result']
-            if result.nil?
+            if result.nil? || result['status'] != 1
+              @parse_errors.push http.uri
               @status = :fail
             else
               matches += result['matches'].map do |match_hash|

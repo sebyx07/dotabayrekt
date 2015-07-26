@@ -1,10 +1,11 @@
 module DotaSteam
   module Parsers
     class BaseParser
-      attr_reader :status, :result, :http_errors
+      attr_reader :status, :result, :http_errors, :parse_errors
 
       def parse
         @status = :pending
+        @parse_errors = []
         @http_errors = []
       end
 
@@ -21,7 +22,7 @@ module DotaSteam
       end
 
       def successful?
-        done? && http_errors.empty?
+        done? && http_errors.empty? && @parse_errors.empty?
       end
     end
   end
