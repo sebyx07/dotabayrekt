@@ -22,7 +22,7 @@ describe 'DotaSteam::SteamEntities::DotaPlayer' do
   let(:player_attributes_full) do
     player_attributes_history.push(
       :items, :bear_items, :kills, :deaths, :assists, :leaver_status, :gold, :last_hits, :denies, :gpm, :xpm, :gold_spent,
-      :hero_damage, :tower_damage, :hero_healing, :level, :lvlups
+      :hero_damage, :tower_damage, :hero_healing, :level, :lvlups, :net_worth
     )
   end
 

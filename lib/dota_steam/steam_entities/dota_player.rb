@@ -3,7 +3,7 @@ module DotaSteam
     class DotaPlayer
       attr_accessor :account_id, :player_slot, :hero_id, :items, :bear_items, :kills, :deaths, :assists, :leaver_status,
                     :gold, :last_hits, :denies, :gpm, :xpm, :gold_spent, :hero_damage, :tower_damage, :hero_healing,
-                    :level, :lvlups
+                    :level, :lvlups, :net_worth
 
       #Static
       class << self
@@ -30,6 +30,7 @@ module DotaSteam
           player.gpm = hash['gold_per_min']
           player.xpm = hash['xp_per_min']
           player.gold_spent = hash['gold_spent']
+          player.net_worth = player.gold + player.gold_spent
           player.hero_damage = hash['hero_damage']
           player.tower_damage = hash['tower_damage']
           player.hero_healing = hash['hero_healing']

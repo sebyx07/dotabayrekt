@@ -61,11 +61,11 @@ module DotaSteam
       end
 
       def radiant
-        players.map { |player|  player.radiant? }
+        players.select { |player|  player.radiant? }
       end
 
       def dire
-        players.map { |player|  player.radiant? }
+        players.select { |player|  !player.radiant? }
       end
     end
   end
