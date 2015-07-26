@@ -47,7 +47,6 @@ describe 'DotaSteam::SteamEntities::DotaMatch' do
       expect(match).not_to be nil
 
       match_attributes_full.each do |at|
-        pp at
         expect(match.send(at)).not_to be nil
       end
       expect(match.players.size).to be > 0
