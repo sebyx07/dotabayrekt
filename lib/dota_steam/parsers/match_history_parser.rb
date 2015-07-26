@@ -27,7 +27,7 @@ module DotaSteam
 
             matches += result['matches'].map do |match_hash|
               match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
-              DotaSteam::SteamEntities::DotaMatch.add_players(match, match_hash)
+              DotaSteam::SteamEntities::DotaMatch.add_players_history(match, match_hash)
               match
             end
             results_remaining = result['results_remaining']
@@ -46,7 +46,7 @@ module DotaSteam
 
                 new_matches = temp.map do |match_hash|
                   match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
-                  DotaSteam::SteamEntities::DotaMatch.add_players(match, match_hash)
+                  DotaSteam::SteamEntities::DotaMatch.add_players_history(match, match_hash)
                   match
                 end
                 matches += new_matches
