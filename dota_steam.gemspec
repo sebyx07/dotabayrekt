@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'http', '~> 0.9.0'
-  spec.add_dependency 'multi_json'
+  spec.add_dependency 'multi_json', '~> 1.11.2'
   spec.add_dependency 'configurations', '~> 2.2.0'
 
 
@@ -37,10 +37,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'webmock', '~> 1.21.0'
 
   spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rspec-nc', '~> 0.2.0'
-  spec.add_development_dependency 'guard', '~> 2.12.9'
-  spec.add_development_dependency 'guard-rspec', '~> 4.6.3'
-  spec.add_development_dependency 'pry', '~> 0.10.1'
-  spec.add_development_dependency 'pry-remote', '~> 0.1.8'
-  spec.add_development_dependency 'pry-nav', '~> 0.2.4'
+  spec.add_development_dependency 'rspec-nc'
+  spec.add_development_dependency 'guard'
+  spec.add_development_dependency 'guard-rspec'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'pry-remote'
+  spec.add_development_dependency 'pry-nav'
 end
