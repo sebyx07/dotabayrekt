@@ -22,46 +22,50 @@ module DotaSteam
           initial_request.run(http)
 
           if initial_request.status == 200
-
             result = MultiJson.load(initial_request.body)['result']
+            if result.nil?
+              @status = :fail
+            else
+              matches += result['matches'].map do |match_hash|
+                match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
+                DotaSteam::SteamEntities::DotaMatch.add_players_history(match, match_hash)
+                match
+              end
+              results_remaining = result['results_remaining']
 
-            matches += result['matches'].map do |match_hash|
-              match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
-              DotaSteam::SteamEntities::DotaMatch.add_players_history(match, match_hash)
-              match
-            end
-            results_remaining = result['results_remaining']
+              last_match_id = matches.last.match_id
 
-            last_match_id = matches.last.match_id
+              while last_match_id != nil && results_remaining != nil && results_remaining != 0
+                next_request = DotaSteam::Requests::MatchHistoryRequest.new(@params.merge({start_at_match_id: last_match_id}))
+                next_request.run(http)
 
-            while last_match_id != nil && results_remaining != nil && results_remaining != 0
-              next_request = DotaSteam::Requests::MatchHistoryRequest.new(@params.merge({start_at_match_id: last_match_id}))
-              next_request.run(http)
+                if next_request.status == 200
+                  result = MultiJson.load(next_request.body)['result']
 
-              if next_request.status == 200
-                result = MultiJson.load(next_request.body)['result']
+                  temp = result['matches']
+                  temp.shift
 
-                temp = result['matches']
-                temp.shift
-
-                new_matches = temp.map do |match_hash|
-                  match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
-                  DotaSteam::SteamEntities::DotaMatch.add_players_history(match, match_hash)
-                  match
-                end
-                matches += new_matches
-                if new_matches.last
-                  last_match_id = new_matches.last.match_id
+                  new_matches = temp.map do |match_hash|
+                    match = DotaSteam::SteamEntities::DotaMatch.new_from_history(match_hash)
+                    DotaSteam::SteamEntities::DotaMatch.add_players_history(match, match_hash)
+                    match
+                  end
+                  matches += new_matches
+                  if new_matches.last
+                    last_match_id = new_matches.last.match_id
+                  else
+                    last_match_id = nil
+                  end
+                  results_remaining = result['results_remaining']
                 else
+                  @status = :fail
+                  @http_errors.push(http.uri)
                   last_match_id = nil
                 end
-                results_remaining = result['results_remaining']
-              else
-                @status = :fail
-                last_match_id = nil
               end
             end
           else
+            @http_errors.push(http.uri)
             @status = :fail
           end
         end
