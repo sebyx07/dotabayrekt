@@ -19,11 +19,11 @@ module DotaSteam
         @dire_stats = DotaSteam::Rate::TeamStats.new(@match.radiant, @match.radiant_win)
 
         @match.radiant.each do |player|
-          @player_ratings.push(rate_player(player, @radiant_stats, @dire_stats, @assessments[player.account_id]))
+          @player_ratings.push(rate_player(player, @radiant_stats, @dire_stats, @assessments[player]))
         end
 
         @match.dire.each do |player|
-          @player_ratings.push(rate_player(player, @dire_stats, @radiant_stats, @assessments[player.account_id]))
+          @player_ratings.push(rate_player(player, @dire_stats, @radiant_stats, @assessments[player]))
         end
 
         self

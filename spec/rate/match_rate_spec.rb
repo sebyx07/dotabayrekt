@@ -28,16 +28,16 @@ RSpec.describe DotaSteam::Rate::MatchRate do
     match = parser.result[0]
 
     @rat = DotaSteam::Rate::MatchRate.new(match, {
-                                              match.players[0].account_id => assessment,
-                                              match.players[1].account_id => assessment,
-                                              match.players[2].account_id => assessment,
-                                              match.players[3].account_id => assessment,
-                                              match.players[4].account_id => assessment,
-                                              match.players[5].account_id => assessment,
-                                              match.players[6].account_id => assessment,
-                                              match.players[7].account_id => assessment,
-                                              match.players[8].account_id => assessment,
-                                              match.players[9].account_id => assessment,
+                                              match.players[0] => assessment,
+                                              match.players[1] => assessment,
+                                              match.players[2] => assessment,
+                                              match.players[3] => assessment,
+                                              match.players[4] => assessment,
+                                              match.players[5] => assessment,
+                                              match.players[6] => assessment,
+                                              match.players[7] => assessment,
+                                              match.players[8] => assessment,
+                                              match.players[9] => assessment,
                                                })
 
     @rat.rate
