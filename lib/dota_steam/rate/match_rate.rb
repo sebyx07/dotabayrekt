@@ -16,7 +16,7 @@ module DotaSteam
 
       def rate
         @radiant_stats = DotaSteam::Rate::TeamStats.new(@match.radiant, @match.radiant_win)
-        @dire_stats = DotaSteam::Rate::TeamStats.new(@match.radiant, @match.radiant_win)
+        @dire_stats = DotaSteam::Rate::TeamStats.new(@match.dire, !@match.radiant_win)
 
         @match.radiant.each do |player|
           @player_ratings.push(rate_player(player, @radiant_stats, @dire_stats, @assessments[player]))

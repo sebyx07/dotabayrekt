@@ -46,16 +46,16 @@ RSpec.describe DotaSteam::Rate::MatchRate do
 
   describe '#rate' do
     it 'has stats' do
-      expect(@player_rate.kills_score).to eq 285
+      expect(@player_rate.kills_score).to eq 322
       expect(@player_rate.deaths_score).to eq -1200
       expect(@player_rate.assists_score).to eq 1000
       expect(@player_rate.lh_score).to eq 152
       expect(@player_rate.denies_score).to eq 33
       expect(@player_rate.xpm_score).to eq 434
       expect(@player_rate.gpm_score).to eq 411
-      expect(@player_rate.level_advantage_score).to eq 800
+      expect(@player_rate.level_advantage_score).to eq 1000
       expect(@player_rate.win_score).to eq 0
-      expect(@player_rate.final_score).to eq 2516
+      expect(@player_rate.final_score).to eq 2753
     end
   end
 end
