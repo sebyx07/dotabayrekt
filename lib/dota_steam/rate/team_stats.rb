@@ -4,7 +4,7 @@ module DotaSteam
       attr_reader :win, :kills, :deaths, :assists, :xpm, :gpm, :net_worth, :last_hits, :denies, :lvlups, :level
 
       def initialize(players, radiant_win)
-        @win = check_if_win(radiant_win, players)
+        @win = radiant_win
 
         kills = 0; deaths = 0; assists = 0
         xpm = 0; gpm = 0; net_worth = 0
@@ -41,14 +41,6 @@ module DotaSteam
             current_levels[index][:players] += 1
             current_levels[index][:sum] += l
           end
-        end
-      end
-
-      def check_if_win(radiant_win, players)
-        if radiant_win && players[0].radiant? || !radiant_win && !players[0].radiant?
-          true
-        else
-          false
         end
       end
     end
