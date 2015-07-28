@@ -9,13 +9,13 @@ module DotaSteam
              lh_interval: 600
          },
          killer:{
-             kills: 15
+             assists_kills_percent: 30
          }
       }
 
       SUPPORT={
           op:{
-              assits_percent: 60
+              assists_kills_percent: 60
           }
       }
 
@@ -25,17 +25,16 @@ module DotaSteam
               lh_interval: 600
           },
           killer:{
-              kills_and_assits: 20
+              assists_kills_percent: 40
           }
       }
 
-      def carry_gameplay(player, match_duration)
+      def carry_gameplay(player, ally_kills, match_duration)
         hash = CARRY
-        farmer = hash[:farmer]
-        target_lh = lh_at_time(farmer[:lh_target], farmer[:lh_interval], match_duration)
-        over_target_lh = player.last_hits >= target_lh
+        over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
+        over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
 
-        if over_target_lh && player.kills > hash[:killer][:kills]
+        if over_target_lh && over_ally_support
           :op
         elsif over_target_lh
           :farmer
@@ -46,21 +45,19 @@ module DotaSteam
 
       def support_gameplay(player, ally_kills)
         hash = SUPPORT
-        if(player.assists > percent(ally_kills, hash[:op][:assits_percent]))
+        if over_ally_support?(player.assists, ally_kills, hash[:op])
           return :op
         end
       end
 
-      def mid_gameplay(player, match_duration)
+      def mid_gameplay(player, ally_kills, match_duration)
         hash = MID
-        farmer = hash[:farmer]
-        target_lh = lh_at_time(farmer[:lh_target], farmer[:lh_interval], match_duration)
-        over_target_lh = player.last_hits >= target_lh
+        over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
+        over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
 
-        total_ganks = player.kills  + player.assists
-        if total_ganks >= hash[:killer][:kills_and_assits] && over_target_lh
+        if over_ally_support && over_target_lh
           :op
-        elsif total_ganks >= hash[:killer][:kills_and_assits]
+        elsif over_ally_support
           :killer
         else
           :farmer
@@ -85,6 +82,15 @@ module DotaSteam
         else
           :support
         end
+      end
+
+      def over_target_lh?(player, hash, match_duration)
+        target_lh = lh_at_time(hash[:lh_target], hash[:lh_interval], match_duration)
+        player.last_hits >= target_lh
+      end
+
+      def over_ally_support?(kills_and_assists, ally_kills, hash)
+        kills_and_assists >= percent(ally_kills, hash[:assists_kills_percent])
       end
     end
   end
