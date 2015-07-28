@@ -12,8 +12,10 @@ module DotaSteam
           :op
         elsif over_target_lh
           :farmer
-        else
+        elsif over_ally_support
           :killer
+        else
+          nil
         end
       end
 
@@ -24,8 +26,10 @@ module DotaSteam
           :op
         elsif item_types == :support
           :hard
-        else
+        elsif item_types == :carry
           :core
+        else
+          nil
         end
       end
 
@@ -38,8 +42,10 @@ module DotaSteam
           :op
         elsif over_ally_support
           :killer
-        else
+        elsif over_target_lh
           :farmer
+        else
+          nil
         end
       end
 
@@ -52,19 +58,23 @@ module DotaSteam
           :op
         elsif over_ally_support
           :killer
-        else
+        elsif over_target_lh
           :farmer
+        else
+          nil
         end
       end
 
       def jungle_gameplay(player, ally_kills, match_duration)
         hash = DotaSteam.configuration.gameplay_profilers_cache.json[:jungle]
         over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
-
+        over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
         if over_ally_support
           :killer
-        else
+        elsif over_target_lh
           :farmer
+        else
+          nil
         end
       end
 
@@ -83,8 +93,10 @@ module DotaSteam
 
         if carry > support
           :carry
-        else
+        elsif support > carry
           :support
+        else
+          :unknown
         end
       end
 

@@ -115,7 +115,7 @@ RSpec.describe DotaSteam::Profilers::GamePlay do
     it 'when it is hard' do
       support = double
       allow(support).to receive(:assists).and_return 5
-      allow(support).to receive(:all_items).and_return [78, 78]
+      allow(support).to receive(:all_items).and_return [78, 78, 78]
       expect(support_gameplay(support, 15)).to eq :hard
     end
 
