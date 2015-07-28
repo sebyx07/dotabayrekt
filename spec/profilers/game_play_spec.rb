@@ -29,4 +29,25 @@ RSpec.describe DotaSteam::Profilers::GamePlay do
       expect(carry_gameplay(carry)).to eq :op
     end
   end
+
+  describe '#support_game_play' do
+    it 'when it is hard' do
+      support = double
+      allow(support).to receive(:assists).and_return 10
+
+      expect(support_gameplay(support, 15)).to eq :op
+    end
+  end
+
+  describe '#type_of_items' do
+    it 'when more support items' do
+      items = [78, 78, 78, 42, 42 ,42]
+      expect(type_of_items(items)).to eq :support
+    end
+
+    it 'when more carry items' do
+      items = [141, 141, 141, 141, 0 ,0]
+      expect(type_of_items(items)).to eq :carry
+    end
+  end
 end
