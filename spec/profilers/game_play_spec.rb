@@ -114,8 +114,23 @@ RSpec.describe DotaSteam::Profilers::GamePlay do
   describe '#support_game_play' do
     it 'when it is hard' do
       support = double
-      allow(support).to receive(:assists).and_return 10
+      allow(support).to receive(:assists).and_return 5
+      allow(support).to receive(:all_items).and_return [78, 78]
+      expect(support_gameplay(support, 15)).to eq :hard
+    end
 
+    it 'when it is core' do
+      support = double
+      allow(support).to receive(:assists).and_return 5
+      allow(support).to receive(:all_items).and_return [141, 141]
+      expect(support_gameplay(support, 15)).to eq :core
+    end
+
+
+    it 'when it is hard' do
+      support = double
+      allow(support).to receive(:assists).and_return 15
+      allow(support).to receive(:all_items).and_return [78, 78]
       expect(support_gameplay(support, 15)).to eq :op
     end
   end
@@ -129,6 +144,40 @@ RSpec.describe DotaSteam::Profilers::GamePlay do
     it 'when more carry items' do
       items = [141, 141, 141, 141, 0 ,0]
       expect(type_of_items(items)).to eq :carry
+    end
+  end
+
+
+  describe '#feeder?' do
+    it 'when he left game' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.leaver_status = 1
+      expect(feeder?(player)).to be true
+    end
+
+    it 'when he has 0 items' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.leaver_status = 0
+      player.items = [0, 0]
+      expect(feeder?(player)).to be true
+    end
+
+    it 'when he has 0 farm' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.leaver_status = 0
+      player.items = [0, 1]
+      player.last_hits = 0
+      expect(feeder?(player)).to be true
+    end
+
+    it 'when he has feed' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.leaver_status = 0
+      player.items = [0, 1]
+      player.kills = 1
+      player.assists = 0
+      player.deaths = 5
+      expect(feeder?(player)).to be true
     end
   end
 end

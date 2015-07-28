@@ -61,4 +61,14 @@ describe 'DotaSteam::SteamEntities::DotaPlayer' do
       expect(player.radiant?).to be false
     end
   end
+
+
+  describe '#all_items' do
+    it 'returns all items' do
+      player = DotaSteam::SteamEntities::DotaPlayer.new
+      player.items = [33]
+      player.bear_items = [33, 44]
+      expect(player.all_items.size).to eq 3
+    end
+  end
 end

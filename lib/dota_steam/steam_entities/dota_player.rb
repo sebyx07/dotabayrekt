@@ -65,6 +65,18 @@ module DotaSteam
       def radiant?
         player_slot < 128
       end
+
+      def all_items
+        i = []
+        if items
+          i += items
+        end
+
+        if bear_items
+          i += bear_items
+        end
+        i
+      end
     end
   end
 end

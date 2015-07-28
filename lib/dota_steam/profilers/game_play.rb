@@ -19,8 +19,13 @@ module DotaSteam
 
       def support_gameplay(player, ally_kills)
         hash = DotaSteam.configuration.gameplay_profilers_cache.json[:support]
-        if over_ally_support?(player.assists, ally_kills, hash[:op])
+        item_types = type_of_items(player.all_items)
+        if over_ally_support?(player.assists, ally_kills, hash[:op]) && item_types == :support
           :op
+        elsif item_types == :support
+          :hard
+        else
+          :core
         end
       end
 
@@ -90,6 +95,13 @@ module DotaSteam
 
       def over_ally_support?(kills_and_assists, ally_kills, hash)
         kills_and_assists >= percent(ally_kills, hash[:assists_kills_percent])
+      end
+
+      def feeder?(player)
+        player.leaver_status != 0 ||
+        player.all_items.uniq == [0] ||
+        player.last_hits == 0 ||
+        player.kills * 4 + player.assists < player.deaths
       end
     end
   end

@@ -11,6 +11,9 @@
     },
 
     "support":{
+      "hard": {
+        "support_items": 3
+      },
       "op":{
         "assists_kills_percent": 60
       }

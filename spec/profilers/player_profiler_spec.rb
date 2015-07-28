@@ -36,11 +36,22 @@ RSpec.describe DotaSteam::Profilers::PlayerProfiler do
 
     context 'support' do
       before do
+        @support_hard = double
+        allow(@support_hard).to receive(:assists).and_return 5
+        allow(@support_hard).to receive(:all_items).and_return [78, 78]
+
+        @support_core = double
+        allow(@support_core).to receive(:assists).and_return 10
+        allow(@support_core).to receive(:all_items).and_return [141, 141]
+
         @support_op = double
         allow(@support_op).to receive(:assists).and_return 10
+        allow(@support_op).to receive(:all_items).and_return [78, 78]
       end
 
       it 'return support' do
+        expect(profile_by_gameplay(2, @support_hard, 15, 600)).to eq [:support, :hard]
+        expect(profile_by_gameplay(2, @support_core, 15, 600)).to eq [:support, :core]
         expect(profile_by_gameplay(2, @support_op, 15, 600)).to eq [:support, :op]
       end
     end
