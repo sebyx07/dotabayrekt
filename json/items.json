@@ -1,0 +1,1138 @@
+//Useless = 0
+//Carry = 1
+//Support = 2
+//Mixt = 3
+{
+  "items": [
+    {
+      "id": 0,
+      "name": "empty",
+      "role": 0
+    },
+    {
+      "id": 1,
+      "name": "blink",
+      "role": 3
+    },
+    {
+      "id": 2,
+      "name": "blades_of_attack",
+      "role": 1
+    },
+    {
+      "id": 3,
+      "name": "broadsword",
+      "role": 1
+    },
+    {
+      "id": 4,
+      "name": "chainmail",
+      "role": 3
+    },
+    {
+      "id": 5,
+      "name": "claymore",
+      "role": 1
+    },
+    {
+      "id": 6,
+      "name": "helm_of_iron_will",
+      "role": 2
+    },
+    {
+      "id": 7,
+      "name": "javelin",
+      "role": 1
+    },
+    {
+      "id": 8,
+      "name": "mithril_hammer",
+      "role": 1
+    },
+    {
+      "id": 9,
+      "name": "platemail",
+      "role": 3
+    },
+    {
+      "id": 10,
+      "name": "quarterstaff",
+      "role": 3
+    },
+    {
+      "id": 11,
+      "name": "quelling_blade",
+      "role": 0
+    },
+    {
+      "id": 12,
+      "name": "ring_of_protection",
+      "role": 0
+    },
+    {
+      "id": 182,
+      "name": "stout_shield",
+      "role": 0
+    },
+    {
+      "id": 13,
+      "name": "gauntlets",
+      "role": 0
+    },
+    {
+      "id": 14,
+      "name": "slippers",
+      "role": 0
+    },
+    {
+      "id": 15,
+      "name": "mantle",
+      "role": 0
+    },
+    {
+      "id": 16,
+      "name": "branches",
+      "role": 0
+    },
+    {
+      "id": 17,
+      "name": "belt_of_strength",
+      "role": 0
+    },
+    {
+      "id": 18,
+      "name": "boots_of_elves",
+      "role": 0
+    },
+    {
+      "id": 19,
+      "name": "robe",
+      "role": 0
+    },
+    {
+      "id": 20,
+      "name": "circlet",
+      "role": 0
+    },
+    {
+      "id": 21,
+      "name": "ogre_axe",
+      "role": 3
+    },
+    {
+      "id": 22,
+      "name": "blade_of_alacrity",
+      "role": 1
+    },
+    {
+      "id": 23,
+      "name": "staff_of_wizardry",
+      "role": 2
+    },
+    {
+      "id": 24,
+      "name": "ultimate_orb",
+      "role": 1
+    },
+    {
+      "id": 25,
+      "name": "gloves",
+      "role": 0
+    },
+    {
+      "id": 26,
+      "name": "lifesteal",
+      "role": 1
+    },
+    {
+      "id": 27,
+      "name": "ring_of_regen",
+      "role": 2
+    },
+    {
+      "id": 28,
+      "name": "sobi_mask",
+      "role": 1
+    },
+    {
+      "id": 29,
+      "name": "boots",
+      "role": 3
+    },
+    {
+      "id": 30,
+      "name": "gem",
+      "role": 2
+    },
+    {
+      "id": 31,
+      "name": "cloak",
+      "role": 2
+    },
+    {
+      "id": 32,
+      "name": "talisman_of_evasion",
+      "role": 3
+    },
+    {
+      "id": 33,
+      "name": "cheese",
+      "role": 3
+    },
+    {
+      "id": 34,
+      "name": "magic_stick",
+      "role": 3
+    },
+    {
+      "id": 35,
+      "name": "recipe_magic_wand",
+      "role": 3
+    },
+    {
+      "id": 36,
+      "name": "magic_wand",
+      "role": 0
+    },
+    {
+      "id": 37,
+      "name": "ghost",
+      "role": 2
+    },
+    {
+      "id": 38,
+      "name": "clarity",
+      "role": 2
+    },
+    {
+      "id": 39,
+      "name": "flask",
+      "role": 2
+    },
+    {
+      "id": 40,
+      "name": "dust",
+      "role": 2
+    },
+    {
+      "id": 41,
+      "name": "bottle",
+      "role": 3
+    },
+    {
+      "id": 42,
+      "name": "ward_observer",
+      "role": 2
+    },
+    {
+      "id": 43,
+      "name": "ward_sentry",
+      "role": 2
+    },
+    {
+      "id": 44,
+      "name": "tango",
+      "role": 0
+    },
+    {
+      "id": 45,
+      "name": "courier",
+      "role": 0
+    },
+    {
+      "id": 46,
+      "name": "tpscroll",
+      "role": 3
+    },
+    {
+      "id": 47,
+      "name": "recipe_travel_boots",
+      "role": 1
+    },
+    {
+      "id": 48,
+      "name": "travel_boots",
+      "role": 1
+    },
+    {
+      "id": 49,
+      "name": "recipe_phase_boots",
+      "role": 3
+    },
+    {
+      "id": 50,
+      "name": "phase_boots",
+      "role": 3
+    },
+    {
+      "id": 51,
+      "name": "demon_edge",
+      "role": 1
+    },
+    {
+      "id": 52,
+      "name": "eagle",
+      "role": 1
+    },
+    {
+      "id": 53,
+      "name": "reaver",
+      "role": 1
+    },
+    {
+      "id": 54,
+      "name": "relic",
+      "role": 1
+    },
+    {
+      "id": 55,
+      "name": "hyperstone",
+      "role": 1
+    },
+    {
+      "id": 56,
+      "name": "ring_of_health",
+      "role": 3
+    },
+    {
+      "id": 57,
+      "name": "void_stone",
+      "role": 3
+    },
+    {
+      "id": 58,
+      "name": "mystic_staff",
+      "role": 1
+    },
+    {
+      "id": 59,
+      "name": "energy_booster",
+      "role": 1
+    },
+    {
+      "id": 60,
+      "name": "point_booster",
+      "role": 1
+    },
+    {
+      "id": 61,
+      "name": "vitality_booster",
+      "role": 1
+    },
+    {
+      "id": 62,
+      "name": "recipe_power_treads",
+      "role": 3
+    },
+    {
+      "id": 63,
+      "name": "power_treads",
+      "role": 3
+    },
+    {
+      "id": 64,
+      "name": "recipe_hand_of_midas",
+      "role": 1
+    },
+    {
+      "id": 65,
+      "name": "hand_of_midas",
+      "role": 1
+    },
+    {
+      "id": 66,
+      "name": "recipe_oblivion_staff",
+      "role": 1
+    },
+    {
+      "id": 67,
+      "name": "oblivion_staff",
+      "role": 1
+    },
+    {
+      "id": 68,
+      "name": "recipe_pers",
+      "role": 1
+    },
+    {
+      "id": 69,
+      "name": "pers",
+      "role": 1
+    },
+    {
+      "id": 70,
+      "name": "recipe_poor_mans_shield",
+      "role": 0
+    },
+    {
+      "id": 71,
+      "name": "poor_mans_shield",
+      "role": 0
+    },
+    {
+      "id": 72,
+      "name": "recipe_bracer",
+      "role": 0
+    },
+    {
+      "id": 73,
+      "name": "bracer",
+      "role": 0
+    },
+    {
+      "id": 74,
+      "name": "recipe_wraith_band",
+      "role": 0
+    },
+    {
+      "id": 75,
+      "name": "wraith_band",
+      "role": 0
+    },
+    {
+      "id": 76,
+      "name": "recipe_null_talisman",
+      "role": 0
+    },
+    {
+      "id": 77,
+      "name": "null_talisman",
+      "role": 0
+    },
+    {
+      "id": 78,
+      "name": "recipe_mekansm",
+      "role": 2
+    },
+    {
+      "id": 79,
+      "name": "mekansm",
+      "role": 2
+    },
+    {
+      "id": 80,
+      "name": "recipe_vladmir",
+      "role": 2
+    },
+    {
+      "id": 81,
+      "name": "vladmir",
+      "role": 2
+    },
+    {
+      "id": 84,
+      "name": "flying_courier",
+      "role": 0
+    },
+    {
+      "id": 85,
+      "name": "recipe_buckler",
+      "role": 2
+    },
+    {
+      "id": 86,
+      "name": "buckler",
+      "role": 2
+    },
+    {
+      "id": 87,
+      "name": "recipe_ring_of_basilius",
+      "role": 2
+    },
+    {
+      "id": 88,
+      "name": "ring_of_basilius",
+      "role": 2
+    },
+    {
+      "id": 89,
+      "name": "recipe_pipe",
+      "role": 2
+    },
+    {
+      "id": 90,
+      "name": "pipe",
+      "role": 2
+    },
+    {
+      "id": 91,
+      "name": "recipe_urn_of_shadows",
+      "role": 2
+    },
+    {
+      "id": 92,
+      "name": "urn_of_shadows",
+      "role": 2
+    },
+    {
+      "id": 93,
+      "name": "recipe_headdress",
+      "role": 2
+    },
+    {
+      "id": 94,
+      "name": "headdress",
+      "role": 2
+    },
+    {
+      "id": 95,
+      "name": "recipe_sheepstick",
+      "role": 1
+    },
+    {
+      "id": 96,
+      "name": "sheepstick",
+      "role": 1
+    },
+    {
+      "id": 97,
+      "name": "recipe_orchid",
+      "role": 1
+    },
+    {
+      "id": 98,
+      "name": "orchid",
+      "role": 1
+    },
+    {
+      "id": 99,
+      "name": "recipe_cyclone",
+      "role": 3
+    },
+    {
+      "id": 100,
+      "name": "cyclone",
+      "role": 3
+    },
+    {
+      "id": 101,
+      "name": "recipe_force_staff",
+      "role": 2
+    },
+    {
+      "id": 102,
+      "name": "force_staff",
+      "role": 2
+    },
+    {
+      "id": 103,
+      "name": "recipe_dagon",
+      "role": 1
+    },
+    {
+      "id": 197,
+      "name": "recipe_dagon_2",
+      "role": 1
+    },
+    {
+      "id": 198,
+      "name": "recipe_dagon_3",
+      "role": 1
+    },
+    {
+      "id": 199,
+      "name": "recipe_dagon_4",
+      "role": 1
+    },
+    {
+      "id": 200,
+      "name": "recipe_dagon_5",
+      "role": 1
+    },
+    {
+      "id": 104,
+      "name": "dagon",
+      "role": 1
+    },
+    {
+      "id": 201,
+      "name": "dagon_2",
+      "role": 1
+    },
+    {
+      "id": 202,
+      "name": "dagon_3",
+      "role": 1
+    },
+    {
+      "id": 203,
+      "name": "dagon_4",
+      "role": 1
+    },
+    {
+      "id": 204,
+      "name": "dagon_5",
+      "role": 1
+    },
+    {
+      "id": 105,
+      "name": "recipe_necronomicon",
+      "role": 2
+    },
+    {
+      "id": 191,
+      "name": "recipe_necronomicon_2",
+      "role": 2
+    },
+    {
+      "id": 192,
+      "name": "recipe_necronomicon_3",
+      "role": 2
+    },
+    {
+      "id": 106,
+      "name": "necronomicon",
+      "role": 2
+    },
+    {
+      "id": 193,
+      "name": "necronomicon_2",
+      "role": 2
+    },
+    {
+      "id": 194,
+      "name": "necronomicon_3",
+      "role": 2
+    },
+    {
+      "id": 107,
+      "name": "recipe_ultimate_scepter",
+      "role": 1
+    },
+    {
+      "id": 108,
+      "name": "ultimate_scepter",
+      "role": 1
+    },
+    {
+      "id": 109,
+      "name": "recipe_refresher",
+      "role": 1
+    },
+    {
+      "id": 110,
+      "name": "refresher",
+      "role": 1
+    },
+    {
+      "id": 111,
+      "name": "recipe_assault",
+      "role": 1
+    },
+    {
+      "id": 112,
+      "name": "assault",
+      "role": 1
+    },
+    {
+      "id": 113,
+      "name": "recipe_heart",
+      "role": 1
+    },
+    {
+      "id": 114,
+      "name": "heart",
+      "role": 1
+    },
+    {
+      "id": 115,
+      "name": "recipe_black_king_bar",
+      "role": 3
+    },
+    {
+      "id": 116,
+      "name": "black_king_bar",
+      "role": 1
+    },
+    {
+      "id": 117,
+      "name": "aegis",
+      "role": 3
+    },
+    {
+      "id": 118,
+      "name": "recipe_shivas_guard",
+      "role": 2
+    },
+    {
+      "id": 119,
+      "name": "shivas_guard",
+      "role": 2
+    },
+    {
+      "id": 120,
+      "name": "recipe_bloodstone",
+      "role": 3
+    },
+    {
+      "id": 121,
+      "name": "bloodstone",
+      "role": 3
+    },
+    {
+      "id": 122,
+      "name": "recipe_sphere",
+      "role": 2
+    },
+    {
+      "id": 123,
+      "name": "sphere",
+      "role": 2
+    },
+    {
+      "id": 124,
+      "name": "recipe_vanguard",
+      "role": 1
+    },
+    {
+      "id": 125,
+      "name": "vanguard",
+      "role": 1
+    },
+    {
+      "id": 126,
+      "name": "recipe_blade_mail",
+      "role": 1
+    },
+    {
+      "id": 127,
+      "name": "blade_mail",
+      "role": 1
+    },
+    {
+      "id": 128,
+      "name": "recipe_soul_booster",
+      "role": 1
+    },
+    {
+      "id": 129,
+      "name": "soul_booster",
+      "role": 1
+    },
+    {
+      "id": 130,
+      "name": "recipe_hood_of_defiance",
+      "role": 2
+    },
+    {
+      "id": 131,
+      "name": "hood_of_defiance",
+      "role": 2
+    },
+    {
+      "id": 132,
+      "name": "recipe_rapier",
+      "role": 1
+    },
+    {
+      "id": 133,
+      "name": "rapier",
+      "role": 1
+    },
+    {
+      "id": 134,
+      "name": "recipe_monkey_king_bar",
+      "role": 1
+    },
+    {
+      "id": 135,
+      "name": "monkey_king_bar",
+      "role": 1
+    },
+    {
+      "id": 136,
+      "name": "recipe_radiance",
+      "role": 1
+    },
+    {
+      "id": 137,
+      "name": "radiance",
+      "role": 1
+    },
+    {
+      "id": 138,
+      "name": "recipe_butterfly",
+      "role": 1
+    },
+    {
+      "id": 139,
+      "name": "butterfly",
+      "role": 1
+    },
+    {
+      "id": 140,
+      "name": "recipe_greater_crit",
+      "role": 1
+    },
+    {
+      "id": 141,
+      "name": "greater_crit",
+      "role": 1
+    },
+    {
+      "id": 142,
+      "name": "recipe_basher",
+      "role": 1
+    },
+    {
+      "id": 143,
+      "name": "basher",
+      "role": 1
+    },
+    {
+      "id": 144,
+      "name": "recipe_bfury",
+      "role": 1
+    },
+    {
+      "id": 145,
+      "name": "bfury",
+      "role": 1
+    },
+    {
+      "id": 146,
+      "name": "recipe_manta",
+      "role": 1
+    },
+    {
+      "id": 147,
+      "name": "manta",
+      "role": 1
+    },
+    {
+      "id": 148,
+      "name": "recipe_lesser_crit",
+      "role": 1
+    },
+    {
+      "id": 149,
+      "name": "lesser_crit",
+      "role": 1
+    },
+    {
+      "id": 150,
+      "name": "recipe_armlet",
+      "role": 1
+    },
+    {
+      "id": 151,
+      "name": "armlet",
+      "role": 1
+    },
+    {
+      "id": 183,
+      "name": "recipe_invis_sword",
+      "role": 1
+    },
+    {
+      "id": 152,
+      "name": "invis_sword",
+      "role": 1
+    },
+    {
+      "id": 153,
+      "name": "recipe_sange_and_yasha",
+      "role": 1
+    },
+    {
+      "id": 154,
+      "name": "sange_and_yasha",
+      "role": 1
+    },
+    {
+      "id": 155,
+      "name": "recipe_satanic",
+      "role": 1
+    },
+    {
+      "id": 156,
+      "name": "satanic",
+      "role": 1
+    },
+    {
+      "id": 157,
+      "name": "recipe_mjollnir",
+      "role": 1
+    },
+    {
+      "id": 158,
+      "name": "mjollnir",
+      "role": 1
+    },
+    {
+      "id": 159,
+      "name": "recipe_skadi",
+      "role": 1
+    },
+    {
+      "id": 160,
+      "name": "skadi",
+      "role": 1
+    },
+    {
+      "id": 161,
+      "name": "recipe_sange",
+      "role": 1
+    },
+    {
+      "id": 162,
+      "name": "sange",
+      "role": 1
+    },
+    {
+      "id": 163,
+      "name": "recipe_helm_of_the_dominator",
+      "role": 1
+    },
+    {
+      "id": 164,
+      "name": "helm_of_the_dominator",
+      "role": 1
+    },
+    {
+      "id": 165,
+      "name": "recipe_maelstrom",
+      "role": 1
+    },
+    {
+      "id": 166,
+      "name": "maelstrom",
+      "role": 1
+    },
+    {
+      "id": 167,
+      "name": "recipe_desolator",
+      "role": 1
+    },
+    {
+      "id": 168,
+      "name": "desolator",
+      "role": 1
+    },
+    {
+      "id": 169,
+      "name": "recipe_yasha",
+      "role": 1
+    },
+    {
+      "id": 170,
+      "name": "yasha",
+      "role": 1
+    },
+    {
+      "id": 171,
+      "name": "recipe_mask_of_madness",
+      "role": 1
+    },
+    {
+      "id": 172,
+      "name": "mask_of_madness",
+      "role": 1
+    },
+    {
+      "id": 173,
+      "name": "recipe_diffusal_blade",
+      "role": 1
+    },
+    {
+      "id": 195,
+      "name": "recipe_diffusal_blade_2",
+      "role": 1
+    },
+    {
+      "id": 174,
+      "name": "diffusal_blade",
+      "role": 1
+    },
+    {
+      "id": 196,
+      "name": "diffusal_blade_2",
+      "role": 1
+    },
+    {
+      "id": 175,
+      "name": "recipe_ethereal_blade",
+      "role": 1
+    },
+    {
+      "id": 176,
+      "name": "ethereal_blade",
+      "role": 1
+    },
+    {
+      "id": 177,
+      "name": "recipe_soul_ring",
+      "role": 0
+    },
+    {
+      "id": 178,
+      "name": "soul_ring",
+      "role": 0
+    },
+    {
+      "id": 179,
+      "name": "recipe_arcane_boots",
+      "role": 2
+    },
+    {
+      "id": 180,
+      "name": "arcane_boots",
+      "role": 2
+    },
+    {
+      "id": 181,
+      "name": "orb_of_venom",
+      "role": 2
+    },
+    {
+      "id": 184,
+      "name": "recipe_ancient_janggo",
+      "role": 2
+    },
+    {
+      "id": 185,
+      "name": "ancient_janggo",
+      "role": 2
+    },
+    {
+      "id": 186,
+      "name": "recipe_medallion_of_courage",
+      "role": 2
+    },
+    {
+      "id": 187,
+      "name": "medallion_of_courage",
+      "role": 2
+    },
+    {
+      "id": 188,
+      "name": "smoke_of_deceit",
+      "role": 2
+    },
+    {
+      "id": 189,
+      "name": "recipe_veil_of_discord",
+      "role": 2
+    },
+    {
+      "id": 190,
+      "name": "veil_of_discord",
+      "role": 2
+    },
+    {
+      "id": 205,
+      "name": "recipe_rod_of_atos",
+      "role": 2
+    },
+    {
+      "id": 206,
+      "name": "rod_of_atos",
+      "role": 2
+    },
+    {
+      "id": 207,
+      "name": "recipe_abyssal_blade",
+      "role": 1
+    },
+    {
+      "id": 208,
+      "name": "abyssal_blade",
+      "role": 1
+    },
+    {
+      "id": 209,
+      "name": "recipe_heavens_halberd",
+      "role": 2
+    },
+    {
+      "id": 210,
+      "name": "heavens_halberd",
+      "role": 2
+    },
+    {
+      "id": 211,
+      "name": "recipe_ring_of_aquila",
+      "role": 1
+    },
+    {
+      "id": 212,
+      "name": "ring_of_aquila",
+      "role": 1
+    },
+    {
+      "id": 213,
+      "name": "recipe_tranquil_boots",
+      "role": 3
+    },
+    {
+      "id": 214,
+      "name": "tranquil_boots",
+      "role": 3
+    },
+    {
+      "id": 215,
+      "name": "shadow_amulet",
+      "role": 3
+    },
+    {
+      "id": 216,
+      "name": "enchanted_mango",
+      "role": 2
+    },
+    {
+      "id": 218,
+      "name": "ward_dispenser",
+      "role": 0
+    },
+    {
+      "id": 220,
+      "name": "travel_boots_2",
+      "role": 1
+    },
+    {
+      "id": 226,
+      "name": "lotus_orb",
+      "role": 1
+    },
+    {
+      "id": 229,
+      "name": "solar_crest",
+      "role": 2
+    },
+    {
+      "id": 231,
+      "name": "guardian_greaves",
+      "role": 2
+    },
+    {
+      "id": 235,
+      "name": "octarine_core",
+      "role": 1
+    },
+    {
+      "id": 247,
+      "name": "moon_shard",
+      "role": 1
+    },
+    {
+      "id": 249,
+      "name": "silver_edge",
+      "role": 1
+    },
+    {
+      "id": 254,
+      "name": "glimmer_cape",
+      "role": 2
+    },
+    {
+      "id": 241,
+      "name": "tango_single",
+      "role": 0
+    },
+    {
+      "id": 242,
+      "name": "crimson_guard",
+      "role": 2
+    }
+  ]
+}

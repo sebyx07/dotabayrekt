@@ -6,6 +6,7 @@ module DotaSteam
   configuration_defaults do |c|
     c.api_keys = ['EE4B46697AAE3B64E5E4334E10E7AB0F']
     c.heroes_cache = DotaSteam::Cache::BaseCache.new('./json/heroes.json', :heroes)
+    c.items_cache = DotaSteam::Cache::BaseCache.new('./json/items.json', :items)
   end
 end
 
