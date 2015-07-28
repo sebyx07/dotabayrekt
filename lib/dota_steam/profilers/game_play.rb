@@ -66,7 +66,7 @@ module DotaSteam
       def support_gameplay(player, ally_kills)
         hash = SUPPORT
         if over_ally_support?(player.assists, ally_kills, hash[:op])
-          return :op
+          :op
         end
       end
 
