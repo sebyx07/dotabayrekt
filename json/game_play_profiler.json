@@ -1,0 +1,49 @@
+{
+  "profilers":{
+    "carry":{
+      "farmer":{
+        "lh_target": 100,
+        "lh_interval": 600
+      },
+      "killer":{
+        "assists_kills_percent": 30
+      }
+    },
+
+    "support":{
+      "op":{
+        "assists_kills_percent": 60
+      }
+    },
+
+    "mid":{
+      "farmer":{
+        "lh_target": 60,
+        "lh_interval": 600
+      },
+      "killer":{
+        "assists_kills_percent": 40
+      }
+    },
+
+    "offlane":{
+      "farmer":{
+        "lh_target": 40,
+        "lh_interval": 600
+      },
+      "killer":{
+        "assists_kills_percent": 50
+      }
+    },
+
+    "jungle":{
+      "farmer":{
+        "lh_target": 40,
+        "lh_interval": 600
+      },
+      "killer":{
+        "assists_kills_percent": 50
+      }
+    }
+  }
+}

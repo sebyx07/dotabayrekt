@@ -2,6 +2,8 @@ require 'json'
 module DotaSteam
   module Cache
     class BaseCache
+      attr_accessor :json
+
       def initialize(file_path, root_path)
         json = JSON.parse(File.read(file_path))
         @json = symbolize_keys(json)[root_path]

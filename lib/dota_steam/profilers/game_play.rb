@@ -3,54 +3,8 @@ module DotaSteam
   module Profilers
     module GamePlay
       include DotaSteam::Rate::RatingFunctions
-      CARRY={
-         farmer: {
-             lh_target: 100,
-             lh_interval: 600
-         },
-         killer:{
-             assists_kills_percent: 30
-         }
-      }
-
-      SUPPORT={
-          op:{
-              assists_kills_percent: 60
-          }
-      }
-
-      MID ={
-          farmer:{
-              lh_target: 60,
-              lh_interval: 600
-          },
-          killer:{
-              assists_kills_percent: 40
-          }
-      }
-
-      OFFLANE ={
-          farmer:{
-              lh_target: 40,
-              lh_interval: 600
-          },
-          killer:{
-              assists_kills_percent: 50
-          }
-      }
-
-      JUNGLE ={
-          farmer:{
-              lh_target: 40,
-              lh_interval: 600
-          },
-          killer:{
-              assists_kills_percent: 50
-          }
-      }
-
       def carry_gameplay(player, ally_kills, match_duration)
-        hash = CARRY
+        hash = DotaSteam.configuration.gameplay_profilers_cache.json[:carry]
         over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
         over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
 
@@ -64,14 +18,14 @@ module DotaSteam
       end
 
       def support_gameplay(player, ally_kills)
-        hash = SUPPORT
+        hash = DotaSteam.configuration.gameplay_profilers_cache.json[:support]
         if over_ally_support?(player.assists, ally_kills, hash[:op])
           :op
         end
       end
 
       def mid_gameplay(player, ally_kills, match_duration)
-        hash = MID
+        hash = DotaSteam.configuration.gameplay_profilers_cache.json[:mid]
         over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
         over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
 
@@ -85,7 +39,7 @@ module DotaSteam
       end
 
       def offlane_gameplay(player, ally_kills, match_duration)
-        hash = OFFLANE
+        hash = DotaSteam.configuration.gameplay_profilers_cache.json[:offlane]
         over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
         over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
 
@@ -99,7 +53,7 @@ module DotaSteam
       end
 
       def jungle_gameplay(player, ally_kills, match_duration)
-        hash = JUNGLE
+        hash = DotaSteam.configuration.gameplay_profilers_cache.json[:jungle]
         over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
 
         if over_ally_support
