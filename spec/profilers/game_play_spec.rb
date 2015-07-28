@@ -7,26 +7,55 @@ RSpec.describe DotaSteam::Profilers::GamePlay do
   describe '#carry_gameplay' do
     it 'when it is farmer' do
       carry = double
-      allow(carry).to receive(:gpm).and_return 800
+      allow(carry).to receive(:last_hits).and_return 100
       allow(carry).to receive(:kills).and_return 10
 
-      expect(carry_gameplay(carry)).to eq :farmer
+      expect(carry_gameplay(carry, 600)).to eq :farmer
     end
 
     it 'when it is killer' do
       carry = double
-      allow(carry).to receive(:gpm).and_return 700
+      allow(carry).to receive(:last_hits).and_return 80
       allow(carry).to receive(:kills).and_return 20
 
-      expect(carry_gameplay(carry)).to eq :killer
+      expect(carry_gameplay(carry, 600)).to eq :killer
     end
 
     it 'when it is farmer' do
       carry = double
-      allow(carry).to receive(:gpm).and_return 800
+      allow(carry).to receive(:last_hits).and_return 100
       allow(carry).to receive(:kills).and_return 20
 
-      expect(carry_gameplay(carry)).to eq :op
+      expect(carry_gameplay(carry, 600)).to eq :op
+    end
+  end
+
+  describe '#mid_gameplay' do
+    it 'when it is farmer' do
+      mid = double
+      allow(mid).to receive(:last_hits).and_return 100
+      allow(mid).to receive(:kills).and_return 10
+      allow(mid).to receive(:assists).and_return 4
+
+      expect(mid_gameplay(mid, 600)).to eq :farmer
+    end
+
+    it 'when it is killer' do
+      mid = double
+      allow(mid).to receive(:last_hits).and_return 40
+      allow(mid).to receive(:kills).and_return 10
+      allow(mid).to receive(:assists).and_return 10
+
+      expect(mid_gameplay(mid, 600)).to eq :killer
+    end
+
+    xit 'when it is farmer' do
+      mid = double
+      allow(mid).to receive(:last_hits).and_return 100
+      allow(mid).to receive(:kills).and_return 10
+      allow(mid).to receive(:assists).and_return 10
+
+      expect(mid_gameplay(mid, 600)).to eq :op
     end
   end
 
