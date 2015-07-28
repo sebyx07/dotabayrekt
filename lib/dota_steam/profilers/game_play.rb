@@ -113,7 +113,7 @@ module DotaSteam
         player.leaver_status != 0 ||
         player.all_items.uniq == [0] ||
         player.last_hits == 0 ||
-        player.kills * 4 + player.assists < player.deaths
+        player.kills + player.assists < player.deaths
       end
     end
   end
