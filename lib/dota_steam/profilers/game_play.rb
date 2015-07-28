@@ -29,6 +29,26 @@ module DotaSteam
           }
       }
 
+      OFFLANE ={
+          farmer:{
+              lh_target: 40,
+              lh_interval: 600
+          },
+          killer:{
+              assists_kills_percent: 50
+          }
+      }
+
+      JUNGLE ={
+          farmer:{
+              lh_target: 40,
+              lh_interval: 600
+          },
+          killer:{
+              assists_kills_percent: 50
+          }
+      }
+
       def carry_gameplay(player, ally_kills, match_duration)
         hash = CARRY
         over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
@@ -58,6 +78,31 @@ module DotaSteam
         if over_ally_support && over_target_lh
           :op
         elsif over_ally_support
+          :killer
+        else
+          :farmer
+        end
+      end
+
+      def offlane_gameplay(player, ally_kills, match_duration)
+        hash = OFFLANE
+        over_target_lh = over_target_lh?(player, hash[:farmer], match_duration)
+        over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
+
+        if over_ally_support && over_target_lh
+          :op
+        elsif over_ally_support
+          :killer
+        else
+          :farmer
+        end
+      end
+
+      def jungle_gameplay(player, ally_kills, match_duration)
+        hash = JUNGLE
+        over_ally_support = over_ally_support?(player.assists + player.kills, ally_kills, hash[:killer])
+
+        if over_ally_support
           :killer
         else
           :farmer
