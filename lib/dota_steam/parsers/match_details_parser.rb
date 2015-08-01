@@ -25,9 +25,13 @@ module DotaSteam
                 @parse_errors.push match_id
                 @status = :fail
               else
-                match = DotaSteam::SteamEntities::DotaMatch.new_from_full(result)
-                DotaSteam::SteamEntities::DotaMatch.add_players_full(match, result)
-                matches.push(match)
+               begin
+                 match = DotaSteam::SteamEntities::DotaMatch.new_from_full(result)
+                 DotaSteam::SteamEntities::DotaMatch.add_players_full(match, result)
+                 matches.push(match)
+               rescue NoMethodError
+                 @parse_errors.push match_id
+               end
               end
             else
               @http_errors.push(match_id)
