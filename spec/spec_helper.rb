@@ -10,7 +10,8 @@ module DotaSteam
     c.heroes_cache = DotaSteam::Cache::BaseCache.new('./json/heroes.json', :heroes)
     c.items_cache = DotaSteam::Cache::BaseCache.new('./json/items.json', :items)
     c.gameplay_profilers_cache = DotaSteam::Cache::BaseCache.new('./json/game_play_profiler.json', :profilers)
-    c.logger = logger
+    c.parse_logger = logger
+    c.rate_logger = logger
   end
 end
 

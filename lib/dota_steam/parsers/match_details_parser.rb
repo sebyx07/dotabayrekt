@@ -17,25 +17,29 @@ module DotaSteam
         HTTP.persistent('http://api.steampowered.com') do |http|
           while match_ids.size > 0
             match_id = match_ids.pop
-            request = DotaSteam::Requests::MatchDetailsRequest.new(@params.merge(match_id: match_id))
-            request.run(http)
-            if request.status == 200
-              result = MultiJson.load(request.body)['result']
-              if result.nil? || result['error']
-                @parse_errors.push match_id
-                @status = :fail
+            DotaSteam.configuration.parse_logger.info "m: #{match_id}"
+            begin
+              request = DotaSteam::Requests::MatchDetailsRequest.new(@params.merge(match_id: match_id))
+              request.run(http)
+              if request.status == 200
+                result = MultiJson.load(request.body)['result']
+                if result.nil? || result['error']
+                  @parse_errors.push match_id
+                  @status = :fail
+                else
+                  match = DotaSteam::SteamEntities::DotaMatch.new_from_full(result)
+                  DotaSteam::SteamEntities::DotaMatch.add_players_full(match, result)
+                  matches.push(match)
+                  @parse_errors.push match_id
+                end
               else
-               begin
-                 match = DotaSteam::SteamEntities::DotaMatch.new_from_full(result)
-                 DotaSteam::SteamEntities::DotaMatch.add_players_full(match, result)
-                 matches.push(match)
-               rescue NoMethodError
-                 @parse_errors.push match_id
-               end
+                DotaSteam.configuration.parse_logger.warn 'bad http status'
+                @http_errors.push(match_id)
+                @status = :fail
               end
-            else
+            rescue HTTP::TimeoutError
+              DotaSteam.configuration.parse_logger.warn 'timeout'
               @http_errors.push(match_id)
-              @status = :fail
             end
           end
         end

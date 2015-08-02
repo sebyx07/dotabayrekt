@@ -54,7 +54,7 @@ module DotaSteam
             end
           else
             match.players = []
-            DotaSteam.configuration.logger.warn "parse: match without players: #{match.match_id}"
+            DotaSteam.configuration.parse_logger.warn 'w/o players'
           end
         end
 
@@ -65,7 +65,7 @@ module DotaSteam
             end
           else
             match.players = []
-            DotaSteam.configuration.logger.warn "parse: match without players: #{match.match_id}"
+            DotaSteam.configuration.parse_logger.warn 'w/o players'
           end
         end
       end
