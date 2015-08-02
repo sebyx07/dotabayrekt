@@ -76,4 +76,28 @@ describe 'DotaSteam::SteamEntities::DotaMatch' do
       expect(match.dire.size).to eq 1
     end
   end
+
+  describe '#self.add_players_history' do
+    before do
+      @match = DotaSteam::SteamEntities::DotaMatch.new
+    end
+    context 'hash has no players' do
+      it 'players are [] and warns' do
+        DotaSteam::SteamEntities::DotaMatch.add_players_history(@match, {})
+        expect(@match.players).to be_empty
+      end
+    end
+  end
+
+  describe '#self.add_players_full' do
+    before do
+      @match = DotaSteam::SteamEntities::DotaMatch.new
+    end
+    context 'hash has no players' do
+      it 'players are [] and warns' do
+        DotaSteam::SteamEntities::DotaMatch.add_players_full(@match, {})
+        expect(@match.players).to be_empty
+      end
+    end
+  end
 end

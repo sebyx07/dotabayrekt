@@ -1,13 +1,17 @@
 require 'pry'
 require 'dota_steam'
 require 'webmock/rspec'
+require 'logger'
 
 module DotaSteam
+  logger = Logger.new('./spec/spec.log', 'daily')
   configuration_defaults do |c|
     c.api_keys = ['EE4B46697AAE3B64E5E4334E10E7AB0F']
     c.heroes_cache = DotaSteam::Cache::BaseCache.new('./json/heroes.json', :heroes)
     c.items_cache = DotaSteam::Cache::BaseCache.new('./json/items.json', :items)
     c.gameplay_profilers_cache = DotaSteam::Cache::BaseCache.new('./json/game_play_profiler.json', :profilers)
+    c.parse_logger = logger
+    c.rate_logger = logger
   end
 end
 

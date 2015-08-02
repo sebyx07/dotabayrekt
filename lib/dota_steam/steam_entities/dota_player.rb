@@ -44,6 +44,10 @@ module DotaSteam
           player.items = []
           player.items.push(hash['item_0'], hash['item_1'], hash['item_2'], hash['item_3'], hash['item_4'], hash['item_5'])
 
+          if hash['item_0'].nil?
+            DotaSteam.configuration.parse_logger.warn 'player w/o items'
+          end
+
           if player.hero_id == 80
             player.bear_items = []
             root = hash['additional_units'][0]
@@ -53,10 +57,14 @@ module DotaSteam
 
         def add_lvlups(player, hash)
           player.lvlups = []
-          root = hash['ability_upgrades']
+          ability_upgrades = hash['ability_upgrades']
 
-          root.each do |ability|
-            player.lvlups.push ability['time']
+          if ability_upgrades && ability_upgrades.respond_to?(:each)
+            ability_upgrades.each do |ability|
+              player.lvlups.push ability['time']
+            end
+          else
+            DotaSteam.configuration.parse_logger.warn 'player w/o lvlups'
           end
         end
       end

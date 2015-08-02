@@ -48,14 +48,24 @@ module DotaSteam
         end
 
         def add_players_history(match, hash)
-          match.players = hash['players'].map do |player_hash|
-            DotaSteam::SteamEntities::DotaPlayer.new_from_history(player_hash)
+          if hash['players'] && hash['players'].respond_to?(:map)
+            match.players = hash['players'].map do |player_hash|
+              DotaSteam::SteamEntities::DotaPlayer.new_from_history(player_hash)
+            end
+          else
+            match.players = []
+            DotaSteam.configuration.parse_logger.warn 'w/o players'
           end
         end
 
         def add_players_full(match, hash)
-          match.players = hash['players'].map do |player_hash|
-            DotaSteam::SteamEntities::DotaPlayer.new_from_full(player_hash)
+          if hash['players'] && hash['players'].respond_to?(:map)
+            match.players = hash['players'].map do |player_hash|
+              DotaSteam::SteamEntities::DotaPlayer.new_from_full(player_hash)
+            end
+          else
+            match.players = []
+            DotaSteam.configuration.parse_logger.warn 'w/o players'
           end
         end
       end
