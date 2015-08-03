@@ -30,7 +30,6 @@ module DotaSteam
                   match = DotaSteam::SteamEntities::DotaMatch.new_from_full(result)
                   DotaSteam::SteamEntities::DotaMatch.add_players_full(match, result)
                   matches.push(match)
-                  @parse_errors.push match_id
                 end
               else
                 DotaSteam.configuration.parse_logger.warn 'bad http status'
