@@ -28,9 +28,12 @@ module DotaSteam
         new_levels = []
         target_level = 3
         len = levels.size
-        levels[target_level - 1 .. len - 1].each_with_index { |time, i| new_levels << time if i % target_level == 0 }
-
-        new_levels
+        if len >= target_level
+          levels[target_level - 1 .. len - 1].each_with_index { |time, i| new_levels << time if i % target_level == 0 }
+          new_levels
+        else
+          []
+        end
       end
 
       def add_levels(current_levels, new_levels)
