@@ -19,7 +19,7 @@ module DotaSteam
           when 4
             [:offlane, offlane_gameplay(player, ally_kills, match_duration)]
           when 5
-            [:jungle, mid_gameplay(player, ally_kills, match_duration)]
+            [:jungle, jungle_gameplay(player, ally_kills, match_duration)]
           else
             :unknown
         end
