@@ -45,7 +45,12 @@ module DotaSteam
             penalties += penalty * (enemy_team_level_ups.size - i)
             break
           end
-          average = enemy[:sum] / enemy[:players]
+          if enemy[:players] != 0
+            average = enemy[:sum] / enemy[:players]
+          else
+            average = 0
+          end
+
           if player_level > average
             penalties += penalty
           end
@@ -71,21 +76,33 @@ module DotaSteam
       end
 
       def percent_points(max_value, max_points, current_value)
-        res = current_value * max_points / max_value
-        if res > max_points
-          res = max_points
+        if max_points != 0
+          res = current_value * max_points / max_value
+          if res > max_points
+            res = max_points
+          end
+          res.to_i
+        else
+          0
         end
-        res.to_i
       end
 
       def net_worth_at_time(gold, interval, match_duration)
-        time = match_duration / interval
-        gold * time
+        if interval != 0
+          time = match_duration / interval
+          gold * time
+        else
+          0
+        end
       end
 
       def lh_at_time(lh, interval, match_duration)
-        time = match_duration / interval
-        lh * time
+        if interval != 0
+          time = match_duration / interval
+          lh * time
+        else
+          0
+        end
       end
     end
   end
