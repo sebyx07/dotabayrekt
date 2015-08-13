@@ -189,7 +189,8 @@ module DotaSteam
       end
 
 
-      def parse_until_match(match_id)
+      def parse_until_match(_match_id)
+        match_id = _match_id.to_i
         found = false
         parse
         matches = []
@@ -222,9 +223,10 @@ module DotaSteam
                   end
                 end
 
-                results_remaining = result['results_remaining']
-
-                last_match_id = matches.last.match_id
+                unless found
+                  results_remaining = result['results_remaining']
+                  last_match_id = matches.last.match_id
+                end
 
                 while last_match_id != nil && results_remaining != nil && results_remaining != 0 && found == false
                   next_request = DotaSteam::Requests::MatchHistoryRequest.new(@params.merge({start_at_match_id: last_match_id}))
