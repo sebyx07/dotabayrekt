@@ -9,11 +9,11 @@ describe 'DotaSteam::Parsers::MatchHistoryParser' do
 
     before do
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=EE4B46697AAE3B64E5E4334E10E7AB0F').
-          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistory.json'), :headers => {})
 
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=EE4B46697AAE3B64E5E4334E10E7AB0F&start_at_match_id=1589628135').
-          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistoryLast.json'), :headers => {})
     end
 
@@ -31,11 +31,11 @@ describe 'DotaSteam::Parsers::MatchHistoryParser' do
 
     before do
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?account_id=1234&key=EE4B46697AAE3B64E5E4334E10E7AB0F').
-          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistory.json'), :headers => {})
 
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?account_id=1234&key=EE4B46697AAE3B64E5E4334E10E7AB0F&start_at_match_id=1589628135').
-          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistoryLast.json'), :headers => {})
     end
 
@@ -58,11 +58,11 @@ describe 'DotaSteam::Parsers::MatchHistoryParser' do
 
     before do
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?account_id=1234&key=EE4B46697AAE3B64E5E4334E10E7AB0F').
-          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistory.json'), :headers => {})
 
       stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?account_id=1234&key=EE4B46697AAE3B64E5E4334E10E7AB0F&start_at_match_id=1589628135').
-          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getMatchHistoryLast.json'), :headers => {})
     end
 

@@ -5,7 +5,7 @@ require 'dota_steam/parsers/match_details_parser'
 RSpec.describe DotaSteam::Rate::TeamStats do
   before do
     stub_request(:get, 'http://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?key=EE4B46697AAE3B64E5E4334E10E7AB0F&match_id=1662189584').
-        with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+        with(headers: { connection: 'Keep-Alive', host: 'api.steampowered.com', user_agent: / *./}).
         to_return(:status => 200, :body => File.read('./json_responses/getMatchDetails.json'), :headers => {})
 
     parser = DotaSteam::Parsers::MatchDetailsParser.new

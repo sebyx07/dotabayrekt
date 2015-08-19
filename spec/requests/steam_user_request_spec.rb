@@ -8,7 +8,7 @@ describe 'DotaSteam::Requests::SteamUserRequest' do
   describe '#run' do
     it 'makes http request to steam' do
       stub_request(:get, 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=EE4B46697AAE3B64E5E4334E10E7AB0F&steamids=76561197960435530').
-          with(headers: { connection: 'close', host: 'api.steampowered.com', user_agent: 'http.rb/0.9.0'}).
+          with(headers: { connection: 'close', host: 'api.steampowered.com', user_agent: / *./}).
           to_return(:status => 200, :body => File.read('./json_responses/getPlayerSummaries.json'), :headers => {})
 
       req.run
